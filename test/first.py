@@ -41,7 +41,7 @@ def main():
     pin1 = sys.argv[1];
     pin2 = sys.argv[2];
     pin3 = sys.argv[3];
-    a(pin1,pin2,pin3);
+    a(int(pin1),int(pin2),int(pin3));
     
 if __name__ == '__main__':
     main();
