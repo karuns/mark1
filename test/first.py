@@ -60,7 +60,7 @@ def main():
     pin3 = sys.argv[3];
     pin4 = sys.argv[4];
     
-    start(int(pin1),int(pin2),int(pin3), pin4);
+    start(int(pin1),int(pin2),int(pin3), int(pin4));
     
 if __name__ == '__main__':
     main();
