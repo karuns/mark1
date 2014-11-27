@@ -50,7 +50,12 @@ def start (pin1,pin2,pin3, pin_in):
                 pin_prev_state = 1
         else:
             pin_prev_state = 0    
- 
+    
+    time.sleep(0.5)
+    set_pin(pin1,0);
+    set_pin(pin2,0);
+    set_pin(pin3,0);
+    
 def main():
     pin1 = sys.argv[1];
     pin2 = sys.argv[2];
