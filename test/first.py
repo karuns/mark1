@@ -29,6 +29,11 @@ def three_bit_binary_counter(pin1,pin2,pin3):
                 set_pin(pin3,k);
                 time.sleep(0.5)
 
+    time.sleep(0.5)
+    set_pin(pin1,0);
+    set_pin(pin2,0);
+    set_pin(pin3,0);
+    
 def start (pin1,pin2,pin3, pin_in):
     print "Hello World"
     GPIO.setmode(GPIO.BCM) #numbering scheme that corresponds to breakout board and pin layout
@@ -51,10 +56,6 @@ def start (pin1,pin2,pin3, pin_in):
         else:
             pin_prev_state = 0    
     
-    time.sleep(0.5)
-    set_pin(pin1,0);
-    set_pin(pin2,0);
-    set_pin(pin3,0);
     
 def main():
     pin1 = sys.argv[1];
