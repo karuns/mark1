@@ -9,18 +9,13 @@ def set_pin(pin,val):
     else:
         GPIO.output(pin,GPIO.LOW);
 
-def a (pin1,pin2,pin3):
-    print "Hello World"
-    GPIO.setmode(GPIO.BCM) #numbering scheme that corresponds to breakout board and pin layout
-    GPIO.setup(pin1,GPIO.OUT)
-    GPIO.setup(pin2,GPIO.OUT)
-    GPIO.setup(pin3,GPIO.OUT)
-    
+def three_bit_binary_counter(pin1,pin2,pin3):
+
     set_pin(pin1,0);
     set_pin(pin2,0);
     set_pin(pin3,0);
     time.sleep(0.5)
-    
+
     set_pin(pin1,1);
     set_pin(pin2,1);
     set_pin(pin3,1);
@@ -37,11 +32,35 @@ def a (pin1,pin2,pin3):
     
      #replace pinNum with whatever pin you used, this sets up that pin as an output
     #set LED to flash foreve
+def start (pin1,pin2,pin3, pin_in):
+    print "Hello World"
+    GPIO.setmode(GPIO.BCM) #numbering scheme that corresponds to breakout board and pin layout
+    GPIO.setup(pin1,GPIO.OUT)
+    GPIO.setup(pin2,GPIO.OUT)
+    GPIO.setup(pin3,GPIO.OUT)
+    GPIO.setup(pin_in,GPIO.IN)
+    
+    set_pin(pin1,0);
+    set_pin(pin2,0);
+    set_pin(pin3,0);
+    time.sleep(0.5)
+    
+    pin_prev_state = 0;
+    while True:
+        if(GPIO.input(pin_in)):
+            if(pin_prev_state == 0):
+                three_bit_binary_counter(pin1, pin2, pin3)
+                pin_prev_state == 1
+        else:
+            pin_prev_state == 0    
+ 
 def main():
     pin1 = sys.argv[1];
     pin2 = sys.argv[2];
     pin3 = sys.argv[3];
-    a(int(pin1),int(pin2),int(pin3));
+    pin4 = sys.argv[4];
+    
+    start(int(pin1),int(pin2),int(pin3), pin4);
     
 if __name__ == '__main__':
     main();
