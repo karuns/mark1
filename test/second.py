@@ -16,7 +16,7 @@ def start (pin1,pin2,pin3, pin_in):
     while True:
         if(GPIO.input(pin_in)):
             if(pin_prev_state == 0):
-                os.system("python led.py "+str(pin1)+" "+str(pin2)+" "+str(pin3))
+                os.system("python /home/pi/projects/mark1/test/led.py "+str(pin1)+" "+str(pin2)+" "+str(pin3))
                 pin_prev_state = 1
         else:
             pin_prev_state = 0    
