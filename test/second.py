@@ -10,6 +10,7 @@ def set_pin(pin,val):
         GPIO.output(pin,GPIO.LOW);
 
 def start (pin1,pin2,pin3, pin_in):
+    GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin_in,GPIO.IN)
     pin_prev_state = 0;
     while True:
