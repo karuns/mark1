@@ -4,7 +4,7 @@ import pygame
 import time
 import RPi.GPIO as GPIO
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
 # Initialise the pygame library
 pygame.init()
