@@ -93,13 +93,13 @@ try:
             if event.axis == 1:
               LeftTrack = event.value
               UpdateMotors = 1
-            elif event.axis == 2:
+            elif event.axis == 0:
               LeftTurn = event.value
               UpdateMotors = 1
             elif event.axis == 3:
               RightTrack = event.value
               UpdateMotors = 1
-            elif event.axis == 4:
+            elif event.axis == 2:
               RightTurn = event.value
               UpdateMotors = 1
 
